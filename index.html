@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+             crossorigin="anonymous">
+             <title>Random Quote Machine!</title>
+       <script src ="quotes.js"> </script>
+             <script>
+            //   const QUOTEBANK =[ 
+                  
+            //   {
+            //         quote:"There shall be no want in the house of my devotees.",
+            //         author:"Shirdi SaiBaba"
+            //   },
+            //   {
+            //         quote:"I shall be active and vigorous even from the tomb.",
+            //         author:"Shirdi SaiBaba"
+            //   },
+            //   {
+            //         quote:"If you cast your burden on me, I shall surely bear it.",
+            //         author:"Shirdi SaiBaba"
+            //   }, 
+            //   {
+            //     quote:"To realise the divine, Love is the easiest path.",
+            //         author:"Sathya SaiBaba"
+            //   }
+               
+            //  ];             
+           window.onload = init;
+              function init()
+              {
+                 generateQuote();
+              }  
+       
+            function generateQuote(){
+               let quoteSize = QUOTEBANK.length;
+                // above statement  will get number of quotes in array
+                //  below , we get random quote by using math.random() , and make it round by math.floor()
+                let randomIndex= Math.floor(Math.random() * quoteSize);
+                let randomQuoteData = QUOTEBANK[randomIndex];
+                let twitterLink="twitter.com/intent/tweet";
+                 document.getElementById("tweet-quote").href= twitterLink;
+                 document.getElementById("text").innerText= randomQuoteData.quote;
+                 document.getElementById("author").innerText= randomQuoteData.author;
+                // document.getElementById("text").innerText= QUOTEBANK[2].quote;
+                // document.getElementById("author").innerText= QUOTEBANK[2].author;
+            }
+          </script>
+          <!-- <style>
+               * {
+                   font-size:1.5rem;
+                   margin: 20px 20px 20px 20px ;
+                   text-align: center;
+               }
+          </style> -->
+    </head>
+
+    <body>
+        <div class ="container">
+          <div class ="row py-5">
+             <div class="col-md-8 offset-md-2">
+              <wrapper id ="quote-box">
+              <div class="card" >
+                <div class="card-body">
+                    <h5 class="card-title">
+                      <div id ="text"></div> 
+                    </h5>
+                    <p class="card-text" >
+                      <div id ="author"></div> 
+                    </p>
+                    <button id="new-quote" class= "btn btn-info btn-block" 
+                            onClick ="generateQuote();">New Quote</button>
+                    <a href="#" id="tweet-quote" class= "btn btn-primary btn-block" target= "_blank" 
+                        >Tweet Quote</a>
+                </div>
+              </div>
+            </div>
+          </wrapper>
+        </div>
+        </div>
+        <!-- <script src="js/bootstrap.min.js"></script> -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>
